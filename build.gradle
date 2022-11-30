@@ -21,6 +21,9 @@ allprojects {
 }
 
 configurations {
+    allCodeCoverageReportSourceDirectories {
+        resolutionStrategy.deactivateDependencyLocking()
+    }
     testCodeCoverageReportExecutionData {
         resolutionStrategy.deactivateDependencyLocking()
     }
