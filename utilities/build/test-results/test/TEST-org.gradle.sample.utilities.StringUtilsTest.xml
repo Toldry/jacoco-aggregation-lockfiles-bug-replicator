@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.gradle.sample.utilities.StringUtilsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-30T15:15:36" hostname="aloneitan-macbookpro.roam.corp.google.com" time="0.0">
-  <properties/>
-  <testcase name="testSplit()" classname="org.gradle.sample.utilities.StringUtilsTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
