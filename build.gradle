@@ -7,11 +7,23 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     implementation project(':application')
     implementation project(':list')
     implementation project(':utilities')
+}
+
+allprojects {
+    dependencyLocking {
+        lockMode = LockMode.STRICT
+        lockAllConfigurations()
+    }
+}
+
+configurations {
+    testCodeCoverageReportExecutionData {
+        resolutionStrategy.deactivateDependencyLocking()
+    }
 }
 
 tasks.named('check') {

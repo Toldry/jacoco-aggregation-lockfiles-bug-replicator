@@ -5,4 +5,5 @@ plugins {
 
 dependencies {
     implementation project(':list')
+    implementation("com.google.guava:guava:+")
 }
