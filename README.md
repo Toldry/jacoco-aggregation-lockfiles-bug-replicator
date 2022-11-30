@@ -14,41 +14,53 @@ Persisted dependency lock state for project ':'
 FAILURE: Build failed with an exception.
 
 * Where:
-Build file 'REDACTED/jacoco-aggregation-lockfiles-bug-replicator/build.gradle' line: 32
+Build file '/Users/aloneitan/workspace2/jacoco-aggregation-lockfiles-bug-replicator/build.gradle' line: 44
 
 * What went wrong:
 Execution failed for task ':resolveAndLockAll'.
-> Could not resolve all files for configuration ':testCodeCoverageReportExecutionData'.
-   > Could not resolve org.junit.jupiter:junit-jupiter:5.7.2.
+> Could not resolve all files for configuration ':allCodeCoverageReportSourceDirectories'.
+   > Could not resolve com.google.guava:guava:+.
      Required by:
-         project : > project :application
-         project : > project :list
          project : > project :utilities
-      > No matching variant of org.junit.jupiter:junit-jupiter:5.7.2 was found. The consumer was configured to find a component of category 'verification', as well as attribute 'org.gradle.verificationtype' with value 'jacoco-coverage', attribute 'artifactType' with value 'binary', attribute 'org.gradle.testsuite.type' with value 'unit-test' but:
-          - Variant 'apiElements' capability org.junit.jupiter:junit-jupiter:5.7.2:
+      > No matching variant of com.google.guava:guava:31.1-jre was found. The consumer was configured to find a component of category 'verification', and its dependencies declared externally, as well as attribute 'org.gradle.verificationtype' with value 'main-sources' but:
+          - Variant 'compile' capability com.google.guava:guava:31.1-jre:
               - Incompatible because this component declares a library and the consumer needed a component of category 'verification'
               - Other compatible attributes:
-                  - Doesn't say anything about artifactType (required 'binary')
-                  - Doesn't say anything about org.gradle.testsuite.type (required 'unit-test')
-                  - Doesn't say anything about org.gradle.verificationtype (required 'jacoco-coverage')
-          - Variant 'javadocElements' capability org.junit.jupiter:junit-jupiter:5.7.2:
-              - Incompatible because this component declares documentation and the consumer needed a component of category 'verification'
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'enforced-platform-compile' capability com.google.guava:guava-derived-enforced-platform:31.1-jre:
+              - Incompatible because this component declares an enforced platform and the consumer needed a component of category 'verification'
               - Other compatible attributes:
-                  - Doesn't say anything about artifactType (required 'binary')
-                  - Doesn't say anything about org.gradle.testsuite.type (required 'unit-test')
-                  - Doesn't say anything about org.gradle.verificationtype (required 'jacoco-coverage')
-          - Variant 'runtimeElements' capability org.junit.jupiter:junit-jupiter:5.7.2:
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'enforced-platform-runtime' capability com.google.guava:guava-derived-enforced-platform:31.1-jre:
+              - Incompatible because this component declares an enforced platform and the consumer needed a component of category 'verification'
+              - Other compatible attributes:
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'javadoc' capability com.google.guava:guava:31.1-jre declares a component, and its dependencies declared externally:
+              - Incompatible because this component declares documentation and the consumer needed a component of category 'verification'
+              - Other compatible attribute:
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'platform-compile' capability com.google.guava:guava-derived-platform:31.1-jre:
+              - Incompatible because this component declares a platform and the consumer needed a component of category 'verification'
+              - Other compatible attributes:
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'platform-runtime' capability com.google.guava:guava-derived-platform:31.1-jre:
+              - Incompatible because this component declares a platform and the consumer needed a component of category 'verification'
+              - Other compatible attributes:
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'runtime' capability com.google.guava:guava:31.1-jre:
               - Incompatible because this component declares a library and the consumer needed a component of category 'verification'
               - Other compatible attributes:
-                  - Doesn't say anything about artifactType (required 'binary')
-                  - Doesn't say anything about org.gradle.testsuite.type (required 'unit-test')
-                  - Doesn't say anything about org.gradle.verificationtype (required 'jacoco-coverage')
-          - Variant 'sourcesElements' capability org.junit.jupiter:junit-jupiter:5.7.2:
+                  - Doesn't say anything about how its dependencies are found (required its dependencies declared externally)
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
+          - Variant 'sources' capability com.google.guava:guava:31.1-jre declares a component, and its dependencies declared externally:
               - Incompatible because this component declares documentation and the consumer needed a component of category 'verification'
-              - Other compatible attributes:
-                  - Doesn't say anything about artifactType (required 'binary')
-                  - Doesn't say anything about org.gradle.testsuite.type (required 'unit-test')
-                  - Doesn't say anything about org.gradle.verificationtype (required 'jacoco-coverage')
+              - Other compatible attribute:
+                  - Doesn't say anything about org.gradle.verificationtype (required 'main-sources')
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -57,13 +69,8 @@ Execution failed for task ':resolveAndLockAll'.
 
 * Get more help at https://help.gradle.org
 
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-See https://docs.gradle.org/7.5.1/userguide/command_line_interface.html#sec:command_line_warnings
-
-BUILD FAILED in 475ms
+BUILD FAILED in 398ms
+10 actionable tasks: 1 executed, 9 up-to-date
 ```
 
 # Note
