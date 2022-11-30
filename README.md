@@ -5,7 +5,7 @@ cd jacoco-aggregation-lockfiles-bug-replicator
 gradle resolveAndLockAll --write-locks
 ```
 
-Expected output:
+# Expected output:
 ```
 Persisted dependency lock state for buildscript of project 'null'
 Persisted dependency lock state for project ':'
