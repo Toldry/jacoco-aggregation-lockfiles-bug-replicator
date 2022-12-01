@@ -18,32 +18,22 @@ allprojects {
         lockMode = LockMode.STRICT
         lockAllConfigurations()
     }
-}
 
-configurations {
-    allCodeCoverageReportSourceDirectories {
-        resolutionStrategy.deactivateDependencyLocking()
-    }
-    testCodeCoverageReportExecutionData {
-        resolutionStrategy.deactivateDependencyLocking()
+    // Copied this task from here:
+    // https://docs.gradle.org/current/userguide/dependency_locking.html#generating_and_updating_dependency_locks
+    tasks.register('resolveAndLockAll') {
+        doFirst {
+            assert gradle.startParameter.writeDependencyLocks
+        }
+        doLast {
+            configurations.findAll {
+                // Add any custom filtering on the configurations to be resolved
+                it.canBeResolved
+            }.each { it.resolve() }
+        }
     }
 }
 
 tasks.named('check') {
     dependsOn tasks.named('testCodeCoverageReport', JacocoReport)
-}
-
-
-// Copied this task from here:
-// https://docs.gradle.org/current/userguide/dependency_locking.html#generating_and_updating_dependency_locks
-tasks.register('resolveAndLockAll') {
-    doFirst {
-        assert gradle.startParameter.writeDependencyLocks
-    }
-    doLast {
-        configurations.findAll {
-            // Add any custom filtering on the configurations to be resolved
-            it.canBeResolved
-        }.each { it.resolve() }
-    }
 }
